@@ -1,0 +1,36 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "title": "Work Experience",
+      "entries": [
+        {
+          "id": 1,
+          "company": "OpenLabsExample",
+          "role": "Software Engineer",
+          "dates": "2022 - Present",
+          "bullets": [
+            "Built cool AI features",
+            "Collaborated with cross-functional teams"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Education",
+      "entries": [
+        {
+          "id": 1,
+          "school": "WGU",
+          "degree": "B.S. Computer Science",
+          "dates": "2019 - 2022",
+          "bullets": [
+            "Focused on software development and QA",
+            "Graduated with honors"
+          ]
+        }
+      ]
+    }
+  ]
+}
