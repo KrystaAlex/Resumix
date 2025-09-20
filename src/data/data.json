@@ -1,34 +1,91 @@
 {
-  "sections": [
+  "resumes": [
     {
       "id": 1,
-      "title": "Education",
-      "entries": [
+      "type": "QA",
+      "header": {
+        "name": "Krystian Rolle",
+        "title": "Quality Assurance Specialist",
+        "contact": "krystian@example.com"
+      },
+      "sections": [
         {
           "id": 1,
-          "school": "WGU",
-          "degree": "B.S. Computer Science",
-          "dates": "2019 - 2022",
-          "bullets": [
-            "Focused on software development and QA",
-            "Graduated with honors"
+          "title": "Education",
+          "entries": [
+            {
+              "id": 1,
+              "title": "B.S. Computer Science",
+              "organization": "WGU",
+              "dates": "Aug 2019 – May 2022",
+              "bullets": [
+                "Focused coursework on software development and software testing",
+                "Completed multiple projects involving automated testing strategies",
+                "Graduated with honors, GPA 3.8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Work Experience",
+          "entries": [
+            {
+              "id": 1,
+              "title": "Software Tester",
+              "organization": "OpenLabsExample",
+              "dates": "Jan 2022 – Present",
+              "bullets": [
+                "Designed and executed manual and automated test cases",
+                "Used Selenium and Cypress to streamline regression testing",
+                "Reported and tracked bugs across development cycles to improve product quality"
+              ]
+            }
           ]
         }
       ]
-    }
-,
+    },
     {
       "id": 2,
-      "title": "Work Experience",
-      "entries": [
+      "type": "Software Development",
+      "header": {
+        "name": "Krystian Rolle",
+        "title": "Software Developer",
+        "contact": "krystian@example.com"
+      },
+      "sections": [
         {
           "id": 1,
-          "company": "OpenLabsExample",
-          "role": "Software Engineer",
-          "dates": "2022 - Present",
-          "bullets": [
-            "Built cool AI features",
-            "Collaborated with cross-functional teams"
+          "title": "Education",
+          "entries": [
+            {
+              "id": 1,
+              "title": "B.S. Computer Science",
+              "organization": "WGU",
+              "dates": "Aug 2019 – May 2022",
+              "bullets": [
+                "Specialized in full-stack web development",
+                "Built multiple projects using Java, Python, and C++",
+                "Graduated with highest possible GPA, GPA 3.0"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Work Experience",
+          "entries": [
+            {
+              "id": 1,
+              "title": "Software Developer",
+              "organization": "OpenLabsExample",
+              "dates": "Jan 2022 – Present",
+              "bullets": [
+                "Developed and maintained React components for user-facing features",
+                "Collaborated with cross-functional teams to design scalable solutions",
+                "Optimized code performance, reducing page load time by 20%"
+              ]
+            }
           ]
         }
       ]
