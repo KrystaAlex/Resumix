@@ -1,6 +1,6 @@
 import SectionCard from "../components/SectionCard"
 
-function ResumixView({ resumeData }) {
+function ResumixView({ resumeData, updateSection }) {
 return (
     <div className="resume-view">
         <header className="resume-header">
@@ -9,7 +9,7 @@ return (
         <p className="resume-contact">{resumeData.header.contact}</p>
       </header>
       {resumeData.sections.map((section) => (
-         <SectionCard key={section.id} section={section} />
+         <SectionCard key={section.id} section={section} updateSection={updateSection}/>
         ))}
     </div>
 )

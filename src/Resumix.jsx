@@ -15,6 +15,14 @@ function Resumix() {
     setSelectedResume(resume);
   }, [selectedResumeId]);
 
+   const updateSection = (updatedSection) => {
+    const updatedSections = selectedResume.sections.map((section) =>
+      section.id === updatedSection.id ? updatedSection : section
+    );
+    setSelectedResume({ ...selectedResume, sections: updatedSections });
+
+  };
+
   return (
     <>
       <h1>Resumix</h1>
@@ -25,7 +33,7 @@ function Resumix() {
         onChange={setSelectedResumeId}
       />
       {!selectedResume && <p> Please select a resume.</p>}
-      {selectedResume && <ResumixView resumeData={selectedResume} />}
+      {selectedResume && <ResumixView resumeData={selectedResume} updateSection={updateSection} />}
     </>
   );
 }
