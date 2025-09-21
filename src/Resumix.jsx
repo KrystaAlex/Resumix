@@ -5,9 +5,7 @@ import resumeData from "./data/data.json";
 import { useState, useEffect } from "react";
 
 function Resumix() {
-  const [selectedResumeId, setSelectedResumeId] = useState(
-    null
-  );
+  const [selectedResumeId, setSelectedResumeId] = useState("");
   const [selectedResume, setSelectedResume] = useState(null);
 
   useEffect(() => {
