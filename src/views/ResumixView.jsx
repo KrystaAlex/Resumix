@@ -12,7 +12,7 @@ return (
           {section.entries.map((entry) => (
             <div key={entry.id} className="resume-card">
               <h4 className="entry-title">
-                {entry.title} — {entry.organization}
+                {entry.title} | {entry.organization}
               </h4>
               <p className="entry-dates">{entry.dates}</p>
               <ul className="entry-bullets">

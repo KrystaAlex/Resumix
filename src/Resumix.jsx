@@ -6,9 +6,9 @@ import { useState, useEffect } from "react";
 
 function Resumix() {
   const [selectedResumeId, setSelectedResumeId] = useState(
-    resumeData.resumes[0].id
+    null
   );
-  const [selectedResume, setSelectedResume] = useState(resumeData.resumes[0]);
+  const [selectedResume, setSelectedResume] = useState(null);
 
   useEffect(() => {
     const resume = resumeData.resumes.find(
@@ -26,6 +26,7 @@ function Resumix() {
         selectedId={selectedResumeId}
         onChange={setSelectedResumeId}
       />
+      {!selectedResume && <p> Please select a resume.</p>}
       {selectedResume && <ResumixView resumeData={selectedResume} />}
     </>
   );
