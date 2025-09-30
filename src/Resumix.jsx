@@ -7,20 +7,29 @@ import { useState, useEffect } from "react";
 function Resumix() {
   const [selectedResumeId, setSelectedResumeId] = useState("");
   const [selectedResume, setSelectedResume] = useState(null);
+  const [data, setData] = useState(resumeData);
 
   useEffect(() => {
     const resume = resumeData.resumes.find(
       (resume) => resume.id === selectedResumeId
     );
-    setSelectedResume(resume);
-  }, [selectedResumeId]);
+    setSelectedResume(resume || null);
+  }, [selectedResumeId, data]);
 
-   const updateSection = (updatedSection) => {
-    const updatedSections = selectedResume.sections.map((section) =>
-      section.id === updatedSection.id ? updatedSection : section
-    );
-    setSelectedResume({ ...selectedResume, sections: updatedSections });
+  const updateSection = (updatedSection) => {
+    const updatedResumes = data.resumes.map((resume) => {
+      if (resume.id === selectedResumeId) {
+        const updatedSections = resume.sections.map((section) =>
+          section.id === updatedSection.id ? updatedSection : section
+        );
+        return { ...resume, sections: updatedSections };
+      }
+      return resume;
+    });
+    setData({ ...data, resumes: updatedResumes });
 
+    const newSelected = updatedResumes.find((r) => r.id === selectedResumeId);
+    setSelectedResume(newSelected);
   };
 
   return (
@@ -28,12 +37,17 @@ function Resumix() {
       <h1>Resumix</h1>
 
       <ResumeSelector
-        resumes={resumeData.resumes}
+        resumes={data.resumes}
         selectedId={selectedResumeId}
         onChange={setSelectedResumeId}
       />
       {!selectedResume && <p> Please select a resume.</p>}
-      {selectedResume && <ResumixView resumeData={selectedResume} updateSection={updateSection} />}
+      {selectedResume && (
+        <ResumixView
+          resumeData={selectedResume}
+          updateSection={updateSection}
+        />
+      )}
     </>
   );
 }
