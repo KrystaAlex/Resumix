@@ -3,6 +3,7 @@ import ResumixView from "./views/ResumixView";
 import ResumeSelector from "./components/ResumeSelector";
 import resumeData from "./data/data.json";
 import { useState, useEffect } from "react";
+import CreateSectionForm from "./components/CreateSectionForm";
 
 function Resumix() {
   const [selectedResumeId, setSelectedResumeId] = useState("");
@@ -32,6 +33,13 @@ function Resumix() {
     setSelectedResume(newSelected);
   };
 
+  const addSection = (newSection) => {
+    if (!selectedResume) return;
+
+    const updatedSections = [...selectedResume.sections, newSection];
+    setSelectedResume({ ...selectedResume, sections: updatedSections });
+  };
+
   return (
     <>
       <h1>Resumix</h1>
@@ -48,6 +56,7 @@ function Resumix() {
           updateSection={updateSection}
         />
       )}
+      <CreateSectionForm onCreate={addSection} />
     </>
   );
 }
